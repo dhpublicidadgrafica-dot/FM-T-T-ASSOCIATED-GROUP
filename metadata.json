@@ -1,0 +1,7 @@
+{
+  "name": "FM T&T ASSOCIATED GROUP",
+  "description": "Proveedor de internet especializado en llevar fibra óptica y microondas (WISP) a veredas, fincas y pueblos de Antioquia donde otros no llegan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
