@@ -14,15 +14,30 @@ export function ServicesPage() {
   return (
     <div className="w-full bg-white text-black">
       {/* Header section */}
-      <section className="py-20 border-b border-neutral-200 bg-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-xs font-mono tracking-widest uppercase text-neutral-600 mb-3 inline-block border border-neutral-300 px-3 py-1 bg-neutral-50 font-bold">
+      <section className="relative py-20 sm:py-28 border-b border-neutral-900 bg-black text-white text-center overflow-hidden">
+        {/* Background Image with transparency overlay for text legibility */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <picture>
+            <source srcSet="/services-hero-bg.webp?v=2" type="image/webp" />
+            <img
+              src="/services-hero-bg.jpg?v=2"
+              alt="Fondo Servicios y Planes"
+              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-xs font-mono tracking-widest uppercase text-neutral-300 mb-3 inline-block border border-neutral-700 px-3 py-1 bg-black/60 backdrop-blur-xs font-bold drop-shadow-sm">
             TARIFAS TRANSPARENTES
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-black uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto drop-shadow-md">
             PLANES DE INTERNET Y TV
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-700 font-normal max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-200 font-normal max-w-2xl mx-auto drop-shadow-sm">
             Encuentra el plan disponible para tu zona. Conexión de fibra óptica y microondas diseñada para el campo.
           </p>
 
@@ -32,8 +47,8 @@ export function ServicesPage() {
               onClick={() => setActiveZoneId("all")}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 activeZoneId === "all"
-                  ? "bg-black text-white shadow-xs"
-                  : "bg-neutral-100 text-neutral-700 hover:text-black border border-neutral-300"
+                  ? "bg-white text-black shadow-xs font-black"
+                  : "bg-black/60 text-neutral-200 hover:text-white border border-neutral-700 backdrop-blur-xs"
               }`}
             >
               Todas las Zonas
@@ -44,12 +59,12 @@ export function ServicesPage() {
                 onClick={() => setActiveZoneId(zone.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                   activeZoneId === zone.id
-                    ? "bg-black text-white shadow-xs"
-                    : "bg-neutral-100 text-neutral-700 hover:text-black border border-neutral-300"
+                    ? "bg-white text-black shadow-xs font-black"
+                    : "bg-black/60 text-neutral-200 hover:text-white border border-neutral-700 backdrop-blur-xs"
                 }`}
               >
                 <span
-                  className="w-2.5 h-2.5 rounded-full shrink-0"
+                  className="w-2.5 h-2.5 rounded-full shrink-0 shadow-xs"
                   style={{ backgroundColor: zone.color }}
                 />
                 <span>Zona {zone.number}</span>

@@ -25,34 +25,45 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <div className="w-full bg-white text-black">
       {/* 5. HERO PRINCIPAL (85-90vh) - NEGRO PROFUNDO */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-neutral-900 bg-black text-white">
-        {/* Abstract technological connectivity backdrop */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Subtle grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
+        {/* Background Image with transparency and contrast overlays */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <picture className="absolute inset-0">
+            <source srcSet="/hero-bg.webp" type="image/webp" />
+            <img
+              src="/hero-bg.jpg"
+              alt="FM T&T Conectividad Antioquia"
+              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            />
+          </picture>
           
-          {/* Radar / Signal wave rings */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[900px] sm:h-[900px] rounded-full border border-neutral-800/70 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[650px] sm:h-[650px] rounded-full border border-neutral-800 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[380px] sm:h-[380px] rounded-full border border-neutral-700/80 pointer-events-none" />
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
 
-          {/* Vertical light beam / antenna center */}
-          <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-gradient-to-b from-transparent via-neutral-700 to-transparent opacity-50" />
+          {/* Subtle tech grid for consistency across all page backgrounds */}
+          <div
+            className="absolute inset-0 opacity-25"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+              backgroundSize: "32px 32px",
+            }}
+          />
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center z-10">
           {/* Subtle network badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 border border-neutral-800 bg-neutral-950 text-neutral-300 text-xs font-mono tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 border border-neutral-700 bg-neutral-950/90 backdrop-blur-sm text-neutral-200 text-xs font-mono tracking-widest uppercase shadow-lg">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span>FIBRA ÓPTICA & MICROONDAS (WISP) · ANTIOQUIA</span>
           </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             INTERNET DONDE OTROS NO LLEGAN
           </h1>
 
           {/* Secondary Text */}
-          <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-200 font-normal max-w-3xl mx-auto leading-relaxed mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
             Conectamos veredas, fincas y pueblos de Antioquia con internet estable, tecnología y oportunidades.
           </p>
 
@@ -101,19 +112,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
           {/* 4 Bloques visuales - NEGRO PROFUNDO */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* CONECTIVIDAD */}
-            <div className="p-8 bg-black border border-neutral-800 hover:border-neutral-600 transition-colors flex flex-col justify-between shadow-lg text-white">
+            <div className="p-8 bg-[#235BCC] border border-[#235BCC] hover:border-blue-300 transition-colors flex flex-col justify-between shadow-lg text-white">
               <div>
-                <div className="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white mb-6 bg-neutral-950">
+                <div className="w-12 h-12 border border-white/20 flex items-center justify-center text-white mb-6 bg-white/10">
                   <Wifi className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight text-white uppercase mb-3">
                   CONECTIVIDAD
                 </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm text-blue-50 leading-relaxed">
                   Internet para zonas rurales y lugares de difícil acceso.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-neutral-900 text-xs font-mono text-neutral-400">
+              <div className="mt-8 pt-4 border-t border-white/20 text-xs font-mono text-blue-100">
                 Cobertura rural garantizada
               </div>
             </div>
@@ -137,37 +148,37 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             {/* TECNOLOGÍA */}
-            <div className="p-8 bg-black border border-neutral-800 hover:border-neutral-600 transition-colors flex flex-col justify-between shadow-lg text-white">
+            <div className="p-8 bg-[#E41F66] border border-[#E41F66] hover:border-pink-300 transition-colors flex flex-col justify-between shadow-lg text-white">
               <div>
-                <div className="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white mb-6 bg-neutral-950">
+                <div className="w-12 h-12 border border-white/20 flex items-center justify-center text-white mb-6 bg-white/10">
                   <Radio className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight text-white uppercase mb-3">
                   TECNOLOGÍA
                 </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm text-pink-50 leading-relaxed">
                   Soluciones mediante fibra óptica y tecnología inalámbrica WISP.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-neutral-900 text-xs font-mono text-neutral-400">
+              <div className="mt-8 pt-4 border-t border-white/20 text-xs font-mono text-pink-100">
                 Radioenlaces & Red Óptica
               </div>
             </div>
 
             {/* OPORTUNIDADES */}
-            <div className="p-8 bg-black border border-neutral-800 hover:border-neutral-600 transition-colors flex flex-col justify-between shadow-lg text-white">
+            <div className="p-8 bg-[#8E68FB] border border-[#8E68FB] hover:border-purple-300 transition-colors flex flex-col justify-between shadow-lg text-white">
               <div>
-                <div className="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white mb-6 bg-neutral-950">
+                <div className="w-12 h-12 border border-white/20 flex items-center justify-center text-white mb-6 bg-white/10">
                   <Users className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight text-white uppercase mb-3">
                   OPORTUNIDADES
                 </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm text-purple-100 leading-relaxed">
                   Conectividad para estudiar, trabajar, emprender y crecer.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-neutral-900 text-xs font-mono text-neutral-400">
+              <div className="mt-8 pt-4 border-t border-white/20 text-xs font-mono text-purple-200">
                 Desarrollo en el campo
               </div>
             </div>
@@ -431,17 +442,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* 11. CTA FINAL — INICIO (NEGRO PROFUNDO) */}
       <section className="py-24 bg-black text-white text-center relative overflow-hidden border-b border-neutral-900">
+        {/* Background Image with transparency overlay for text legibility */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <img
+            src="/cta-bg.jpg"
+            alt="FM T&T Cobertura Rural"
+            className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+          />
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+        </div>
+
         {/* Subtle tech background effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <span className="text-xs font-mono tracking-widest uppercase text-neutral-400 mb-4 block font-bold">
             ATENCIÓN INMEDIATA
           </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white uppercase font-display mb-6">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white uppercase font-display mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             ¿NECESITAS INTERNET DONDE OTROS NO LLEGAN?
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-300 font-light mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-200 font-light mb-10 max-w-2xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Consulta nuestra cobertura y encuentra el plan ideal para tu zona.
           </p>
 

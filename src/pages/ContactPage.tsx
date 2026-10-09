@@ -32,15 +32,30 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
   return (
     <div className="w-full bg-white text-black">
       {/* Header */}
-      <section className="py-20 border-b border-neutral-200 bg-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-xs font-mono tracking-widest uppercase text-neutral-600 mb-3 inline-block border border-neutral-300 px-3 py-1 bg-neutral-50 font-bold">
+      <section className="relative py-20 sm:py-28 border-b border-neutral-900 bg-black text-white text-center overflow-hidden">
+        {/* Background Image with transparency overlay for text legibility */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <picture>
+            <source srcSet="/contact-hero-bg.webp" type="image/webp" />
+            <img
+              src="/contact-hero-bg.jpg"
+              alt="Fondo Canales de Atención"
+              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-xs font-mono tracking-widest uppercase text-neutral-300 mb-3 inline-block border border-neutral-700 px-3 py-1 bg-black/60 backdrop-blur-xs font-bold drop-shadow-sm">
             CANALES DE ATENCIÓN
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-black uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto drop-shadow-md">
             HABLEMOS
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-700 font-normal max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-200 font-normal max-w-2xl mx-auto drop-shadow-sm">
             ¿Necesitas internet, televisión o cámaras de seguridad? Estamos aquí para ayudarte.
           </p>
         </div>
@@ -178,27 +193,27 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
             </div>
 
             {/* Right: Direct Lead / Information Form */}
-            <div className="p-8 sm:p-10 bg-white border border-neutral-200 shadow-xs">
-              <span className="text-xs font-mono tracking-widest uppercase text-neutral-500 mb-2 block font-bold">
+            <div className="p-8 sm:p-10 bg-black border border-neutral-800 text-white shadow-xl">
+              <span className="text-xs font-mono tracking-widest uppercase text-neutral-400 mb-2 block font-bold">
                 SOLICITUD INMEDIATA
               </span>
-              <h2 className="text-2xl font-extrabold text-black uppercase tracking-tight mb-3">
+              <h2 className="text-2xl font-extrabold text-white uppercase tracking-tight mb-3">
                 ENVIAR MENSAJE
               </h2>
-              <p className="text-xs text-neutral-600 mb-8">
+              <p className="text-xs text-neutral-400 mb-8">
                 Completa tus datos y serás dirigido automáticamente a WhatsApp con tu información lista para ser atendida por un asesor.
               </p>
 
               {submitted && (
-                <div className="mb-6 p-4 bg-neutral-100 border border-black text-xs text-black flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 shrink-0" />
+                <div className="mb-6 p-4 bg-neutral-900 border border-neutral-700 text-xs text-white flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 shrink-0 text-white" />
                   <span>Se abrió la ventana de WhatsApp. Si no cargó, presiona el botón nuevamente.</span>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-neutral-600 mb-2 font-bold">
+                  <label className="block text-xs font-mono uppercase text-neutral-300 mb-2 font-bold">
                     Nombre completo *
                   </label>
                   <input
@@ -207,12 +222,12 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
                     value={formData.nombre}
                     onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
                     placeholder="Ej. Carlos Restrepo"
-                    className="w-full px-4 py-3 bg-neutral-50 border border-neutral-300 text-black placeholder-neutral-400 text-sm focus:outline-none focus:border-black focus:bg-white transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-500 text-sm focus:outline-none focus:border-neutral-500 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-neutral-600 mb-2 font-bold">
+                  <label className="block text-xs font-mono uppercase text-neutral-300 mb-2 font-bold">
                     Teléfono celular / WhatsApp *
                   </label>
                   <input
@@ -221,12 +236,12 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
                     value={formData.telefono}
                     onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
                     placeholder="Ej. 305 123 4567"
-                    className="w-full px-4 py-3 bg-neutral-50 border border-neutral-300 text-black placeholder-neutral-400 text-sm focus:outline-none focus:border-black focus:bg-white transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-500 text-sm focus:outline-none focus:border-neutral-500 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-neutral-600 mb-2 font-bold">
+                  <label className="block text-xs font-mono uppercase text-neutral-300 mb-2 font-bold">
                     Municipio o Vereda
                   </label>
                   <input
@@ -234,29 +249,29 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
                     value={formData.municipioVereda}
                     onChange={(e) => setFormData({ ...formData, municipioVereda: e.target.value })}
                     placeholder="Ej. Vereda San Isidro, Santa Rosa de Osos"
-                    className="w-full px-4 py-3 bg-neutral-50 border border-neutral-300 text-black placeholder-neutral-400 text-sm focus:outline-none focus:border-black focus:bg-white transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-500 text-sm focus:outline-none focus:border-neutral-500 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-neutral-600 mb-2 font-bold">
+                  <label className="block text-xs font-mono uppercase text-neutral-300 mb-2 font-bold">
                     Servicio de interés
                   </label>
                   <select
                     value={formData.servicio}
                     onChange={(e) => setFormData({ ...formData, servicio: e.target.value })}
-                    className="w-full px-4 py-3 bg-neutral-50 border border-neutral-300 text-black text-sm focus:outline-none focus:border-black focus:bg-white transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 text-sm focus:outline-none focus:border-neutral-500 transition-colors"
                   >
-                    <option value="Internet Rural">Internet Rural</option>
-                    <option value="Combo Internet + Televisión">Combo Internet + Televisión</option>
-                    <option value="Solo Televisión">Solo Televisión</option>
-                    <option value="Cámaras de Seguridad">Cámaras de Seguridad</option>
-                    <option value="Consulta de Cobertura">Consulta de Cobertura</option>
+                    <option value="Internet Rural" className="bg-white text-neutral-900">Internet Rural</option>
+                    <option value="Combo Internet + Televisión" className="bg-white text-neutral-900">Combo Internet + Televisión</option>
+                    <option value="Solo Televisión" className="bg-white text-neutral-900">Solo Televisión</option>
+                    <option value="Cámaras de Seguridad" className="bg-white text-neutral-900">Cámaras de Seguridad</option>
+                    <option value="Consulta de Cobertura" className="bg-white text-neutral-900">Consulta de Cobertura</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-neutral-600 mb-2 font-bold">
+                  <label className="block text-xs font-mono uppercase text-neutral-300 mb-2 font-bold">
                     Comentario o detalle adicional
                   </label>
                   <textarea
@@ -264,13 +279,13 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
                     value={formData.mensaje}
                     onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
                     placeholder="Indícanos si tienes finca, requerimientos de velocidad o dudas técnicas..."
-                    className="w-full px-4 py-3 bg-neutral-50 border border-neutral-300 text-black placeholder-neutral-400 text-sm focus:outline-none focus:border-black focus:bg-white transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-500 text-sm focus:outline-none focus:border-neutral-500 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-3 py-4 bg-black text-white hover:bg-neutral-800 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-3 py-4 bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
                 >
                   <Send className="w-4 h-4" />
                   <span>ENVIAR SOLICITUD POR WHATSAPP</span>

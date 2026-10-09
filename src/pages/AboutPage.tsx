@@ -9,16 +9,31 @@ export function AboutPage() {
   return (
     <div className="w-full bg-white text-black">
       {/* HERO NOSOTROS */}
-      <section className="relative py-24 sm:py-32 border-b border-neutral-200 bg-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:24px_24px] opacity-70" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-mono tracking-widest uppercase text-neutral-600 mb-4 inline-block border border-neutral-300 px-3 py-1 bg-neutral-50 font-bold">
+      <section className="relative py-24 sm:py-32 border-b border-neutral-900 bg-black text-white overflow-hidden">
+        {/* Background Image with transparency overlay for text legibility */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <picture className="absolute inset-0">
+            <source srcSet="/about-hero-bg.webp" type="image/webp" />
+            <img
+              src="/about-hero-bg.jpg"
+              alt="FM T&T Quiénes Somos - Infraestructura y Cobertura Rural"
+              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          <span className="text-xs font-mono tracking-widest uppercase text-neutral-300 mb-4 inline-block border border-neutral-700 px-3.5 py-1.5 bg-neutral-950/80 backdrop-blur-sm font-bold shadow-md">
             QUIÉNES SOMOS
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-black uppercase font-display mb-8 max-w-4xl mx-auto leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display mb-8 max-w-4xl mx-auto leading-[1.1] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             CONECTAMOS ZONAS RURALES CON EL MUNDO
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-700 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-neutral-200 font-normal max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             En FM T&T ASSOCIATED GROUP somos un proveedor de internet especializado en llevar conexión de alta calidad a veredas, fincas y pueblos donde el internet convencional no llega.
           </p>
         </div>

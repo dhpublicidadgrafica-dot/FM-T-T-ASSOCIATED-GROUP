@@ -1,73 +1,40 @@
-import { useState } from "react";
 import { ArrowUpRight, Shield, Eye, Lock, HardDrive } from "lucide-react";
 import { CAMERAS_DATA } from "../data/camerasData";
 import { CameraIllustration } from "../components/CameraIllustration";
 import { getWhatsAppUrl } from "../config/siteConfig";
 
 export function CamerasPage() {
-  const [selectedBrand, setSelectedBrand] = useState<string>("TODOS");
-  const [selectedType, setSelectedType] = useState<string>("TODOS");
-
-  const filteredCameras = CAMERAS_DATA.filter((cam) => {
-    const matchesBrand = selectedBrand === "TODOS" || cam.brand === selectedBrand;
-    const matchesType = selectedType === "TODOS" || cam.type === selectedType;
-    return matchesBrand && matchesType;
-  });
+  const filteredCameras = CAMERAS_DATA;
 
   return (
     <div className="w-full bg-white text-black">
       {/* Header */}
-      <section className="py-20 border-b border-neutral-900 bg-black text-white text-center relative overflow-hidden">
-        {/* Subtle tech background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+      <section className="relative py-20 sm:py-28 border-b border-neutral-900 bg-black text-white text-center overflow-hidden">
+        {/* Background Image with transparency overlay for text legibility */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <picture>
+            <source srcSet="/cameras-hero-bg.webp" type="image/webp" />
+            <img
+              src="/cameras-hero-bg.jpg"
+              alt="Fondo Cámaras de Seguridad"
+              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <span className="text-xs font-mono tracking-widest uppercase text-neutral-400 mb-3 inline-block border border-neutral-800 px-3 py-1 bg-neutral-950 font-bold">
+          <span className="text-xs font-mono tracking-widest uppercase text-neutral-300 mb-3 inline-block border border-neutral-700 px-3 py-1 bg-black/60 backdrop-blur-xs font-bold drop-shadow-sm">
             CATÁLOGO DE PRODUCTOS
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto drop-shadow-md">
             CÁMARAS DE SEGURIDAD
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-300 font-normal max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-200 font-normal max-w-2xl mx-auto drop-shadow-sm">
             Soluciones de videovigilancia para proteger tus espacios. Monitorea tu finca, hogar o negocio en tiempo real desde tu celular.
           </p>
-
-          {/* Filter options */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <div className="flex items-center gap-1 border border-neutral-800 p-1 bg-neutral-950">
-              <span className="text-[11px] font-mono text-neutral-400 uppercase px-2 font-bold">Marca:</span>
-              {["TODOS", "EZVIZ", "HILOOK"].map((brand) => (
-                <button
-                  key={brand}
-                  onClick={() => setSelectedBrand(brand)}
-                  className={`px-3 py-1.5 text-xs font-bold uppercase transition-colors cursor-pointer ${
-                    selectedBrand === brand
-                      ? "bg-white text-black"
-                      : "text-neutral-400 hover:text-white"
-                  }`}
-                >
-                  {brand}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-1 border border-neutral-800 p-1 bg-neutral-950">
-              <span className="text-[11px] font-mono text-neutral-400 uppercase px-2 font-bold">Formato:</span>
-              {["TODOS", "360°", "DOMO", "BALA"].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setSelectedType(type)}
-                  className={`px-3 py-1.5 text-xs font-bold uppercase transition-colors cursor-pointer ${
-                    selectedType === type
-                      ? "bg-white text-black"
-                      : "text-neutral-400 hover:text-white"
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -147,38 +114,38 @@ export function CamerasPage() {
           </div>
 
           {/* Security Features Banner */}
-          <div className="mt-20 p-8 sm:p-12 bg-white border border-neutral-200 grid grid-cols-1 md:grid-cols-3 gap-8 shadow-xs">
+          <div className="mt-20 p-8 sm:p-12 bg-black border border-neutral-800 grid grid-cols-1 md:grid-cols-3 gap-8 shadow-xl">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-neutral-200 bg-neutral-50 flex items-center justify-center shrink-0 text-black">
+              <div className="w-10 h-10 border border-neutral-800 bg-neutral-900 flex items-center justify-center shrink-0 text-white">
                 <Eye className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-black uppercase mb-1">Visualización Remota</h4>
-                <p className="text-xs text-neutral-600">
+                <h4 className="text-sm font-bold text-white uppercase mb-1">Visualización Remota</h4>
+                <p className="text-xs text-neutral-400">
                   Accede a la transmisión de video en vivo desde tu teléfono móvil estés donde estés.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-neutral-200 bg-neutral-50 flex items-center justify-center shrink-0 text-black">
+              <div className="w-10 h-10 border border-neutral-800 bg-neutral-900 flex items-center justify-center shrink-0 text-white">
                 <Shield className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-black uppercase mb-1">Protección para Fincas</h4>
-                <p className="text-xs text-neutral-600">
+                <h4 className="text-sm font-bold text-white uppercase mb-1">Protección para Fincas</h4>
+                <p className="text-xs text-neutral-400">
                   Modelos diseñados con protección climática y visión nocturna ColorVu de largo alcance.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-neutral-200 bg-neutral-50 flex items-center justify-center shrink-0 text-black">
+              <div className="w-10 h-10 border border-neutral-800 bg-neutral-900 flex items-center justify-center shrink-0 text-white">
                 <Lock className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-black uppercase mb-1">Instalación Profesional</h4>
-                <p className="text-xs text-neutral-600">
+                <h4 className="text-sm font-bold text-white uppercase mb-1">Instalación Profesional</h4>
+                <p className="text-xs text-neutral-400">
                   Configuración e integración directa con tu conexión a internet de FM T&T.
                 </p>
               </div>
