@@ -28,9 +28,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         {/* Background Image with transparency and contrast overlays */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <picture className="absolute inset-0">
-            <source srcSet="/hero-bg.webp" type="image/webp" />
+            <source srcSet="/hero-bg.webp?v=2" type="image/webp" />
             <img
-              src="/hero-bg.jpg"
+              src="/hero-bg.jpg?v=2"
               alt="FM T&T Conectividad Antioquia"
               className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
             />
