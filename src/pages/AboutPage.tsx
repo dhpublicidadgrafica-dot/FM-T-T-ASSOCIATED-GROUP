@@ -17,12 +17,12 @@ export function AboutPage() {
             <img
               src="/about-hero-bg.jpg"
               alt="FM T&T Quiénes Somos - Infraestructura y Cobertura Rural"
-              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
             />
           </picture>
-          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out bright and clear */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
         </div>
 
@@ -144,42 +144,42 @@ export function AboutPage() {
 
           {/* Composición visual de los 6 pilares requeridos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#235BCC] border border-[#235BCC] text-center flex flex-col items-center justify-center hover:border-blue-300 transition-colors shadow-lg">
               <Wifi className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 CONECTIVIDAD
               </div>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#FD6438] border border-[#FD6438] text-center flex flex-col items-center justify-center hover:border-orange-300 transition-colors shadow-lg">
               <GraduationCap className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 EDUCACIÓN
               </div>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#C21DB0] border border-[#C21DB0] text-center flex flex-col items-center justify-center hover:border-pink-300 transition-colors shadow-lg">
               <Briefcase className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 TRABAJO
               </div>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#5500C4] border border-[#5500C4] text-center flex flex-col items-center justify-center hover:border-purple-400 transition-colors shadow-lg">
               <MessageSquare className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 COMUNICACIÓN
               </div>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#E41F66] border border-[#E41F66] text-center flex flex-col items-center justify-center hover:border-pink-300 transition-colors shadow-lg">
               <TrendingUp className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 DESARROLLO
               </div>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800 text-center flex flex-col items-center justify-center hover:border-neutral-600 transition-colors shadow-lg">
+            <div className="p-6 bg-[#8E68FB] border border-[#8E68FB] text-center flex flex-col items-center justify-center hover:border-purple-300 transition-colors shadow-lg">
               <Sparkles className="w-8 h-8 text-white mb-3" />
               <div className="text-sm font-bold text-white uppercase tracking-wider">
                 OPORTUNIDADES

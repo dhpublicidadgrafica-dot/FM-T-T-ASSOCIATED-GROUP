@@ -22,11 +22,11 @@ export function ServicesPage() {
             <img
               src="/services-hero-bg.jpg?v=2"
               alt="Fondo Servicios y Planes"
-              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
         </div>
 
@@ -75,8 +75,21 @@ export function ServicesPage() {
       </section>
 
       {/* Main Content: Zones and Plans */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <section className="relative py-16 sm:py-24 bg-neutral-50 overflow-hidden">
+        {/* Background Image with subtle texture overlay */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <picture className="absolute inset-0">
+            <source srcSet="/technology-bg.webp" type="image/webp" />
+            <img
+              src="/technology-bg.jpg"
+              alt="Fondo Red y Tecnología de Conectividad"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/70 via-neutral-50/40 to-neutral-50/75" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {displayedZones.map((zone) => (
             <div
               key={zone.id}

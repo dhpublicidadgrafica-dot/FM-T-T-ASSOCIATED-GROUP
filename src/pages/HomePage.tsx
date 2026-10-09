@@ -32,13 +32,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <img
               src="/hero-bg.jpg?v=2"
               alt="FM T&T Conectividad Antioquia"
-              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
             />
           </picture>
           
-          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out bright and clear */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
 
           {/* Subtle tech grid for consistency across all page backgrounds */}
           <div
@@ -51,12 +51,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center z-10">
-          {/* Subtle network badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 border border-neutral-700 bg-neutral-950/90 backdrop-blur-sm text-neutral-200 text-xs font-mono tracking-widest uppercase shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span>FIBRA ÓPTICA & MICROONDAS (WISP) · ANTIOQUIA</span>
-          </div>
-
           {/* Main Title */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08] mb-8 max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             INTERNET DONDE OTROS NO LLEGAN
@@ -187,8 +181,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 7. SECCIÓN TECNOLOGÍA */}
-      <section className="py-24 border-b border-neutral-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 border-b border-neutral-200 bg-white overflow-hidden">
+        {/* Background Image with subtle overlay for texture and legibility */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <picture className="absolute inset-0">
+            <source srcSet="/technology-bg.webp" type="image/webp" />
+            <img
+              src="/technology-bg.jpg"
+              alt="Fondo Red y Tecnología de Conectividad"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-white/70" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-mono tracking-widest uppercase text-neutral-500 mb-3 block font-bold">
               INGENIERÍA & RED
@@ -200,7 +207,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* FIBRA ÓPTICA */}
-            <div className="p-8 sm:p-12 bg-neutral-50 border border-neutral-200 flex flex-col justify-between relative overflow-hidden group hover:border-black transition-colors">
+            <div className="p-8 sm:p-12 bg-white/95 backdrop-blur-sm border border-neutral-200 flex flex-col justify-between relative overflow-hidden group hover:border-black transition-all shadow-sm">
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest font-bold">
@@ -222,7 +229,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             {/* MICROONDAS — WISP */}
-            <div className="p-8 sm:p-12 bg-neutral-50 border border-neutral-200 flex flex-col justify-between relative overflow-hidden group hover:border-black transition-colors">
+            <div className="p-8 sm:p-12 bg-white/95 backdrop-blur-sm border border-neutral-200 flex flex-col justify-between relative overflow-hidden group hover:border-black transition-all shadow-sm">
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest font-bold">
@@ -447,11 +454,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <img
             src="/cta-bg.jpg"
             alt="FM T&T Cobertura Rural"
-            className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
           />
-          {/* Gradients ensuring high legibility of all texts while letting the image stand out */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          {/* Gradients ensuring high legibility of all texts while letting the image stand out bright and clear */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
         </div>
 
         {/* Subtle tech background effect */}

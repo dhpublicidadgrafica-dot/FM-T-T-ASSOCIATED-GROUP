@@ -40,11 +40,11 @@ Mensaje adicional: ${formData.mensaje || "Deseo recibir información"}`;
             <img
               src="/contact-hero-bg.jpg"
               alt="Fondo Canales de Atención"
-              className="w-full h-full object-cover object-center opacity-65 scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(#1f1f1f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
         </div>
 
